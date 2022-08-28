@@ -3,12 +3,10 @@
 
 The demo contains the following modules:
 
-recaptcha-spring-boot-starter:
+recaptcha-spring-boot-starter:  
+This based on the https://github.com/mkopylec/recaptcha-spring-boot-starter, I copied it to here with minor changes (making it maven from gradle module and also some minor changes in the code)
 
-This based on the https://github.com/mkopylec/recaptcha-spring-boot-starter, I copied it to here with minor changes (making it maven from gradle project and also some minor changes in the code)
-
-spring-recaptcha-roles-logindemo (the real runnable spring boot application):
-
+spring-recaptcha-roles-logindemo (the real runnable spring boot application):  
 This is my coding, using the recaptcha-spring-boot-starter module to the reCAPTCHA validation, implementing the abstract com.github.mkopylec.recaptcha.security.login.LoginFailuresManager (hu.berenyi.spring.logindemo.security.login.manager.CustomLoginFailuresManager) and using the com.github.mkopylec.recaptcha.security.login.FormLoginConfigurerEnhancer in the @Configuration hu.berenyi.spring.logindemo.config.MvcConfiguration.
 
 The project includes Thymeleaf, Apache Derby database with the creation of a db tables from the Entity classes, also dataloader (creation of users in the db)

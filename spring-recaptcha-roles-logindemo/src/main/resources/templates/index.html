@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>reCAPTCHA demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+	<link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="container text-center" th:with="currentPage='index'">
+	<div th:insert="header"></div>
+	<div>
+		<p>
+			Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+		</p>
+	</div>
+	<div>
+		<h1>Main page</h1>
+	</div>
+</div>
+</body>
+</html>
