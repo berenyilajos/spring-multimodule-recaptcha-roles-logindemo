@@ -23,11 +23,11 @@ public class ValidationConfiguration {
     public ValidationConfiguration(RecaptchaProperties recaptcha) {
         this.recaptcha = recaptcha;
     }
-    
+
     @Bean
-	public BCryptPasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
     @Bean
     public RecaptchaValidator userResponseValidator(final RestTemplateBuilder templateBuilder, IpAddressResolver ipAddressResolver) {
