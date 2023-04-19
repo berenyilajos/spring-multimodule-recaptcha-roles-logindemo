@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,7 +18,7 @@ import com.github.mkopylec.recaptcha.security.login.FormLoginConfigurerEnhancer;
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableMethodSecurity(prePostEnabled = true)
 @ComponentScan({ "com.github.mkopylec.recaptcha", "hu.berenyi.spring.logindemo" })
 public class MvcConfiguration {
 
@@ -51,13 +51,13 @@ public class MvcConfiguration {
 		enhancer.addRecaptchaSupport(http.formLogin()).loginPage("/login")
 				.and()
 				.csrf().disable()
-				.authorizeRequests()
-				.antMatchers("/login**").permitAll()
-				.antMatchers("/admin/**").hasRole("Administrator")
-				.antMatchers("/content/**").hasAnyRole("Administrator", "Content editor")
-				.antMatchers("/signedin/**")
+				.authorizeHttpRequests()
+				.requestMatchers("/login**").permitAll()
+				.requestMatchers("/admin/**").hasRole("Administrator")
+				.requestMatchers("/content/**").hasAnyRole("Administrator", "Content editor")
+				.requestMatchers("/signedin/**")
 				.hasAnyRole("Administrator", "Signed in user")
-				.antMatchers("/**").authenticated().and()
+				.requestMatchers("/**").authenticated().and()
 				.exceptionHandling().accessDeniedPage("/accessdenied");
 		http.authenticationProvider(authenticationProvider());
 

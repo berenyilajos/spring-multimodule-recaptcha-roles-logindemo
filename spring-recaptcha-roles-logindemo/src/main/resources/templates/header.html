@@ -5,8 +5,8 @@
             <li sec:authorize="hasRole('Administrator')"><a th:classappend="${currentPage == 'users'} ? 'active'" th:href="@{/admin/users}">Users</a></li>
             <li sec:authorize="isAuthenticated()"><a th:classappend="${currentPage == 'index'} ? 'active'" th:href="@{/}">Main page</a></li>
             <li sec:authorize="isAuthenticated()" class="right" ><a th:href="@{/logout}">Logout</a></li>
-            <li sec:authorize="isAuthenticated()" class="right" ><span th:text="'Last login: ' + ${{#request.userPrincipal.principal.lastLoginTime}}"></span></li>
-            <li sec:authorize="isAuthenticated()" class="right" ><span th:text="'Roles: ' + ${#request.userPrincipal.principal.authorities}"></span></li>
-            <li sec:authorize="isAuthenticated()" class="right" ><span th:text="'Roles: ' + ${#request.userPrincipal.principal.username}"></span></li>
+            <li sec:authorize="isAuthenticated()" class="right" ><span>Last login: <b sec:authentication="principal.lastLoginTime"></b></span></li>
+            <li sec:authorize="isAuthenticated()" class="right" ><span>Roles: <b sec:authentication="authorities"></b></span></li>
+            <li sec:authorize="isAuthenticated()" class="right" ><span>username: <b sec:authentication="name"></b></span></li>
         </ul>
         
