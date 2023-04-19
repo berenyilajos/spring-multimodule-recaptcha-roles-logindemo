@@ -1,6 +1,6 @@
 package com.github.mkopylec.recaptcha.validation;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 public interface RecaptchaValidator {
 

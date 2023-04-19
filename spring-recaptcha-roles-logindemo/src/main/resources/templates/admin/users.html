@@ -14,7 +14,7 @@
 	<div th:insert="header"></div>
 	<div>
 		<p>
-			Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+			Welcome <b sec:authentication="principal.fullName"></b>
 		</p>
 	</div>
 	<div>

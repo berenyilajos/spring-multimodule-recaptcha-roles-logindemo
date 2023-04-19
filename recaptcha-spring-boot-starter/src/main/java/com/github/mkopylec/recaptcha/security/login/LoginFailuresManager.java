@@ -5,7 +5,7 @@ import com.github.mkopylec.recaptcha.RecaptchaProperties.Security;
 import org.slf4j.Logger;
 import org.springframework.security.core.Authentication;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
