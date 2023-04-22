@@ -7,6 +7,6 @@
             <li sec:authorize="isAuthenticated()" class="right" ><a th:href="@{/logout}">Logout</a></li>
             <li sec:authorize="isAuthenticated()" class="right" ><span th:text="'Last login: ' + ${{#request.userPrincipal.principal.lastLoginTime}}"></span></li>
             <li sec:authorize="isAuthenticated()" class="right" ><span th:text="'Roles: ' + ${#request.userPrincipal.principal.authorities}"></span></li>
-            <li sec:authorize="isAuthenticated()" class="right" ><span th:text="'Roles: ' + ${#request.userPrincipal.principal.username}"></span></li>
+            <li sec:authorize="isAuthenticated()" class="right" ><span th:text="'usermane: ' + ${#request.userPrincipal.principal.username}"></span></li>
         </ul>
         
