@@ -67,7 +67,7 @@
                 <input id="button" type="submit" value="Login" class="btn btn-primary" onclick="return validatecaptcha()" />
             </p>
             <!-- Google captcha (I'm not robot checkbox) -->
-            <div th:if="${#httpServletRequest.getParameter('showRecaptcha')}" id="recaptcha" class="g-recaptcha" data-sitekey="6LfEQRETAAAAAMxkEr7RHrOE0XEUeeGUgcspSf2J"></div>
+            <div th:if="${param.showRecaptcha}" id="recaptcha" class="g-recaptcha" data-sitekey="6LfEQRETAAAAAMxkEr7RHrOE0XEUeeGUgcspSf2J"></div>
             <div th:if="${param.showRecaptcha}">
 	        	<p id="captcha-error" class="text-danger"></p>
 	        </div>
